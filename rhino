@@ -1,0 +1,4 @@
+#! /bin/sh
+
+# This starts the Rhino JavaScript interpreter
+java org.mozilla.javascript.tools.shell.Main
