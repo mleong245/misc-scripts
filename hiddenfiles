@@ -10,11 +10,13 @@ if [ "${#}" == 0 ] ; then
 fi
 
 if [ "${1}" == "show" ] ; then
-    echo "Showing hidden files; make sure to relaunch Finder."
+    echo "Showing hidden files and relaunching Finder."
     defaults write com.apple.Finder AppleShowAllFiles YES
+    killall Finder
 elif [ "${1}" == "hide" ]; then
-    echo "Hiding hidden files; make sure to relaunch Finder."
+    echo "Hiding hidden files and relaunching Finder."
     defaults write com.apple.Finder AppleShowAllFiles NO
+    killall Finder
 else
 	echo "Please use either option <show> or <hide>."
 fi
