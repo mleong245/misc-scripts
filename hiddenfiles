@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function usage {
+    echo "usage: ${0} [show/hide]"
+}
+
+if [ "${#}" == 0 ] ; then
+    usage
+    exit 1
+fi
+
+if [ "${1}" == "show" ] ; then
+    echo "Showing hidden files; make sure to relaunch Finder."
+    defaults write com.apple.Finder AppleShowAllFiles YES
+elif [ "${1}" == "hide" ]; then
+    echo "Hiding hidden files; make sure to relaunch Finder."
+    defaults write com.apple.Finder AppleShowAllFiles NO
+else
+	echo "Please use either option <show> or <hide>."
+fi
+
